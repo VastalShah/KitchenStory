@@ -1,0 +1,34 @@
+<blockquote class="blockquote">
+    <h2 class="display-4 text-center">Cart</h2>
+</blockquote>
+<div class="container">
+    <div class="card  text-center mx-auto" style="width: 18rem;">
+        <img src={{p_img}} class="card-img-top" alt={{p_name}}>
+        <div class="card-body">
+          <h5 class="card-title">{{p_name}}</h5>
+          <h3 class="card-text"><span class="badge badge-warning">Price: &#x20B9;{{p_price}}</span></h3>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Make Payment
+          </button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><i class="far fa-check-circle"></i> Payment Succesfull</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        Thank you for ordering food from our us!<br>We ensure safe delivery of food items.
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
