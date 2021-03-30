@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
@@ -7,11 +8,12 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   searchBar: any;
   searchResult: any;
   productFound!: boolean;
+  p_id: any;
   p_img: any;
   p_name!: string;
   p_desc!: string;
@@ -42,6 +44,7 @@ export class HomepageComponent implements OnInit {
       var prod = localStorage.getItem(productId);
       var product: any = prod?.split("+");
       if(product[2].toLowerCase() == name.toLowerCase()){
+        this.p_id = product[0];
         this.p_img = product[1];
         this.p_name = product[2];
         this.p_desc = product[3];
@@ -50,5 +53,11 @@ export class HomepageComponent implements OnInit {
       }
     }
     return false;
+  }
+
+  addToCart(id: any){
+    var prod: any = localStorage.getItem(id);
+    sessionStorage.setItem("cart", prod);
+    this.router.navigate(['/cart']);
   }
 }

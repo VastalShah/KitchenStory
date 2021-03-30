@@ -10,6 +10,7 @@
             <h5 class="card-title">{{product.p_name}}</h5>
             <p class="card-text">{{product.p_desc}}</p>
             <h3 class="card-text"><span class="badge badge-warning">Price: &#x20B9;{{product.p_price}}</span></h3>
+            <button type="button" class="btn btn-primary" (click)="addToCart(product.p_id)">Buy</button>
           </div>
         </div>
     </div>
