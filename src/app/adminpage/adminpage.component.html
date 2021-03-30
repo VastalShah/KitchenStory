@@ -1,0 +1,46 @@
+<div class="container">
+    <blockquote class="blockquote text-center">
+        <h1 class="display-4"><strong>Add Products</strong></h1>
+    </blockquote>
+    <form style="padding: 1rem;" class="needs-validation">
+        <div class="form-row justify-content-center align-items-center">
+            <div class="col-md-4">
+                <label for="p_id"><strong>Product Id</strong></label>
+                <input type="text" id="p_id" class="form-control" placeholder="Enter Product Id" required (input)="handleProductId($event)">
+            </div>
+        </div>
+        <div class="form-row justify-content-center align-items-center">
+            <div class="col-md-4">
+                <label for="p_imgurl"><strong>Product Image Link</strong></label>
+                <input type="text" id="p_imgurl" class="form-control" placeholder="Enter Product Image URL" required (input)="handleProductImage($event)">
+            </div>
+        </div>
+        <div class="form-row justify-content-center align-items-center">
+            <div class="col-md-4">
+                <label for="p_name"><strong>Product Name</strong></label>
+                <input type="text" id="p_name" class="form-control" placeholder="Enter Product Name" required (input)="handleProductName($event)">
+            </div>
+        </div>
+        <div class="form-row justify-content-center align-items-center">
+            <div class="col-md-4">
+                <label for="p_desc"><strong>Product Description</strong></label>
+                <input type="text" id="p_desc" class="form-control" placeholder="Enter Product Description" required (input)="handleProductDescription($event)">
+            </div>
+        </div>
+        <div class="form-row justify-content-center align-items-center">
+            <div class="col-md-4">
+                <label for="p_price"><strong>Product Price</strong></label>
+                <input type="text" id="p_price" class="form-control" placeholder="Enter Product Price" required (input)="handleProductPrice($event)">
+            </div>
+        </div>
+        
+        <div class="form-row justify-content-center align-items-center">
+            <div class="col-md-4">
+                <br>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-dark text-white" (click)="handleProductSubmit($event)">Publish Product</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
