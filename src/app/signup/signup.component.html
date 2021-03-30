@@ -1,8 +1,10 @@
-<div class="container justify-content-center align-items-center">
+<div id="signup" class="container justify-content-center align-items-center shadow">
     <div class="form-row justify-content-center align-items-center" style="padding: 20px;">
-        <h1>SignUp Page</h1>
+        <blockquote class="blockquote">
+            <h1 class="display-4"><u>SignUp</u></h1>
+        </blockquote>
     </div>
-    <div class="form-row justify-content-center align-items-center shadow" style="padding: 20px;">
+    <div class="form-row justify-content-center align-items-center" style="padding: 20px;">
         <form [formGroup]="userForm" (ngSubmit)="handleFormData()">
 
             UserName: <br><input type="text" [ngClass]="{'invalid':
