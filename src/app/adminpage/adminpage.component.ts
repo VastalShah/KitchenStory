@@ -49,13 +49,15 @@ export class AdminpageComponent implements OnInit {
     let product: string = this.p_id + "+" + this.p_image + "+" + this.p_name + "+" + this.p_desc + "+" + this.p_price;
     if(typeof(Storage) !== "undefined"){
       localStorage.setItem(this.p_id, product);
-      alert("Successfully added product");
+      location.reload();
     } else{
       alert("Your browser does not support web storage");
     }
   }
 
   deleteItem(id: any){
-
+    console.log(id);
+    localStorage.removeItem(id);
+    location.reload();
   }
 }
