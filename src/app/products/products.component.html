@@ -6,10 +6,10 @@
     <div class="card-deck">
         <div class="card" *ngFor="let product of products">
           <img src={{product.p_img}} class="card-img-top" alt={{product.p_name}} height="200px">
-          <div class="card-body">
+          <div class="card-body text-center">
             <h5 class="card-title">{{product.p_name}}</h5>
             <p class="card-text">{{product.p_desc}}</p>
-            <h3 class="card-text text-center"><span class="badge badge-info">Price: &#x20B9;{{product.p_price}}</span></h3>
+            <h3 class="card-text"><span class="badge badge-warning">Price: &#x20B9;{{product.p_price}}</span></h3>
           </div>
         </div>
     </div>
