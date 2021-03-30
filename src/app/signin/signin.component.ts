@@ -40,11 +40,11 @@ export class SigninComponent implements OnInit {
       return;
     } else{
       if(sessionStorage.length > 0){
-        if((sessionStorage.getItem("email") == "admin@gmail.com" && this.email == "admin@gmail.com") && (sessionStorage.getItem("password") == "admin@123" && this.pass == "admin@123")){
+        if((sessionStorage.getItem("email") == "admin@gmail.com" || this.email == "admin@gmail.com") && (sessionStorage.getItem("password") == "admin@123" || this.pass == "admin@123")){
           this.router.navigate(['/admin']);
         }
         else if(sessionStorage.getItem("email") == this.email && sessionStorage.getItem("password") == this.pass){
-          alert("You have signed in!");
+          this.router.navigate(['/home']);
         }else{
           alert("Username or password do not match");
         }
