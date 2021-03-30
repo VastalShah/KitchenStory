@@ -1,0 +1,16 @@
+
+<div class="container" *ngIf="storageLength > 0">
+    <blockquote class="blockquote">
+        <h1 class="display-4 text-center">Our Popular Items</h1>
+    </blockquote>
+    <div class="card-deck">
+        <div class="card" *ngFor="let product of products">
+          <img src={{product.p_img}} class="card-img-top" alt={{product.p_name}} height="200px">
+          <div class="card-body">
+            <h5 class="card-title">{{product.p_name}}</h5>
+            <p class="card-text">{{product.p_desc}}</p>
+            <p class="card-text"><small class="text-muted">{{product.p_price}}</small></p>
+          </div>
+        </div>
+    </div>
+</div>
