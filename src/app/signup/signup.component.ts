@@ -37,11 +37,11 @@ export class SignupComponent implements OnInit {
         alert("UserName or password should be same");
         return;
       } else{
-        if(localStorage.getItem("email") == this.email && localStorage.getItem("password") == this.pass){
+        if(sessionStorage.getItem("email") == this.email && sessionStorage.getItem("password") == this.pass){
           alert("You are already registered please signin");
         } else{
-          localStorage.setItem("email", this.email);
-          localStorage.setItem("password", this.pass);
+          sessionStorage.setItem("email", this.email);
+          sessionStorage.setItem("password", this.pass);
           alert("You have succesfully registered");
         }
       }
