@@ -41,11 +41,11 @@ export class HomepageComponent implements OnInit {
       var productId: any = localStorage.key(i);
       var prod = localStorage.getItem(productId);
       var product: any = prod?.split("+");
-      if(product[1].toLowerCase() == name.toLowerCase()){
-        this.p_img = product[0];
-        this.p_name = product[1];
-        this.p_desc = product[2];
-        this.p_price = product[3];
+      if(product[2].toLowerCase() == name.toLowerCase()){
+        this.p_img = product[1];
+        this.p_name = product[2];
+        this.p_desc = product[3];
+        this.p_price = product[4];
         return true;
       }
     }

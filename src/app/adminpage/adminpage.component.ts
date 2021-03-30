@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductModel } from '../products/product.model';
+import { ProductService } from '../products/product.service';
 
 @Component({
   selector: 'app-adminpage',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminpageComponent implements OnInit {
 
-  constructor() { }
+  products: ProductModel[];
+
+  constructor( private productService: ProductService ) {
+    this.products = [];
+   }
 
   p_id: any;
   p_image: any;
@@ -16,6 +22,7 @@ export class AdminpageComponent implements OnInit {
   p_price!: number;
 
   ngOnInit(): void {
+    this.products = this.productService.getProducts(localStorage.length);
   }
 
   handleProductId(event: any){
@@ -39,12 +46,16 @@ export class AdminpageComponent implements OnInit {
   }
 
   handleProductSubmit(event: any){
-    let product: string = this.p_image + "+" + this.p_name + "+" + this.p_desc + "+" + this.p_price;
+    let product: string = this.p_id + "+" + this.p_image + "+" + this.p_name + "+" + this.p_desc + "+" + this.p_price;
     if(typeof(Storage) !== "undefined"){
       localStorage.setItem(this.p_id, product);
       alert("Successfully added product");
     } else{
       alert("Your browser does not support web storage");
     }
+  }
+
+  deleteItem(id: any){
+
   }
 }
