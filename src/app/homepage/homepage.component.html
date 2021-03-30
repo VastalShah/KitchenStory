@@ -1,13 +1,31 @@
 <div class="container">
     <!-- <h3 class="text-center">Kitchen Story</h3> -->
-    <h3 class="text-center">Search for products below</h3>
+    <h2 class="text-center">Search for products below</h2>
+    <br>
     <div class="form-row justify-content-center align-items-center">
         <form class="form-inline my-2 my-lg-0">
             <input id="searchBar" type="search" class="form-control mr-sm-2" placeholder="Search here" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="handleSearch()">Search</button>
         </form>
     </div>
 </div>
 <br><br>
+<blockquote class="blockquote" *ngIf="showmsg">
+    <h2 class="display-4 text-center">{{searchMessage}}</h2>
+</blockquote>
+<div id="searchResult" class="container" style="display: none;">
+    <hr id="line1">
+    <div class="card  text-center mx-auto" style="width: 18rem;">
+        <img src={{p_img}} class="card-img-top" alt={{p_name}}>
+        <div class="card-body">
+          <h5 class="card-title">{{p_name}}</h5>
+          <p class="card-text">{{p_desc}}</p>
+          <h3 class="card-text"><span class="badge badge-warning">Price: &#x20B9;{{p_price}}</span></h3>
+          <a href="#" class="btn btn-primary">Buy</a>
+        </div>
+    </div>
+</div>
+<br><br>
+<hr id="line2">
 <app-products></app-products>
 <br>
