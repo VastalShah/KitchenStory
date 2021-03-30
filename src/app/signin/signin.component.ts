@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -8,7 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class SigninComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private router: Router) { }
 
   userForm!: FormGroup;
   formControls: any;
@@ -38,8 +39,11 @@ export class SigninComponent implements OnInit {
       console.log("Form not submited");
       return;
     } else{
-      if(localStorage.length > 0){
-        if(localStorage.getItem("email") == this.email && localStorage.getItem("password") == this.pass){
+      if(sessionStorage.length > 0){
+        if((sessionStorage.getItem("email") == "admin@gmail.com" && this.email == "admin@gmail.com") && (sessionStorage.getItem("password") == "admin@123" && this.pass == "admin@123")){
+          this.router.navigate(['/admin']);
+        }
+        else if(sessionStorage.getItem("email") == this.email && sessionStorage.getItem("password") == this.pass){
           alert("You have signed in!");
         }else{
           alert("Username or password do not match");
