@@ -39,7 +39,6 @@ export class SigninComponent implements OnInit {
       console.log("Form not submited");
       return;
     } else{
-      if(sessionStorage.length > 0){
         if((sessionStorage.getItem("email") == "admin@gmail.com" || this.email == "admin@gmail.com") && (sessionStorage.getItem("password") == "admin@123" || this.pass == "admin@123")){
           this.router.navigate(['/admin']);
         }
@@ -48,9 +47,6 @@ export class SigninComponent implements OnInit {
         }else{
           alert("Username or password do not match");
         }
-      } else{
-        alert("You are not registered. Please signup")
-      }
     }
   }
 
